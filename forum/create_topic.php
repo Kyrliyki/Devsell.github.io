@@ -15,7 +15,9 @@ if (isset($_POST["name"]) && isset($_POST["cotegories"]) && isset($_POST["text"]
 	$sql = "INSERT INTO post (post_content,post_date,post_by,post_cat,post_name) VALUES ('$text','$date','$id','$cotegories','$name')";
 	if(mysqli_query($DataBase, $sql)){
         echo "<h3 style='background-color: green'>Данные успешно добавлены</h3>";
-    } else{
+    } 
+    else
+    {
         echo "Ошибка: " . mysqli_error($DataBase);
     }
     mysqli_close($DataBase);
